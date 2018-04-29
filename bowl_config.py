@@ -20,7 +20,7 @@ print("Images: {} nClasses: {}".format(len(dataset_val.image_ids), dataset_val.c
 
     
 
-#10th try, with jakob's code
+#10th try
 ###config
 class BowlConfig(Config):    
     # Give the configuration a recognizable name
@@ -60,7 +60,7 @@ class BowlConfig(Config):
     }
 
 """ 
-#9th try, with jakob's code
+#9th try
 ###config
 class BowlConfig(Config):    
     # Give the configuration a recognizable name
