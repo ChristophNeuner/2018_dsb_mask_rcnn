@@ -79,10 +79,6 @@ for image_id in dataset_train.image_ids[:4]:
         dataset_train, bowl_config, image_id, augment=False, augmentation=seq, use_mini_mask=True)
     mask = utils.expand_mask(bbox, mask, image.shape)
 
-#### Create data generator
-generator = modellib.data_generator(
-    dataset_train, bowl_config, shuffle=True, batch_size=4, detection_targets=False)
-
 
 # Create model in training mode
 model = modellib.MaskRCNN(mode="training", config=bowl_config, model_dir=MODEL_DIR)
@@ -107,5 +103,6 @@ elif init_with == "last":
 
 model.train(dataset_train, dataset_val,
             learning_rate=bowl_config.LEARNING_RATE, 
-            epochs=100, 
+            epochs=100,
+            augmentation=seq,
             layers="all")
