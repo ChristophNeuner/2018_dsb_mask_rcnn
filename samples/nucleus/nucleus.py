@@ -199,7 +199,7 @@ class NucleusDataset(utils.Dataset):
         # "val": use hard-coded list above
         # "train": use data from stage1_train minus the hard-coded list above
         # else: use the data from the specified sub-directory
-        #assert subset in ["train", "val", "stage1_train", "stage1_test", "stage2_test", "stage1_train_fixed"]
+        assert subset in ["train", "val", "stage1_train", "stage1_test", "stage2_test"]
         subset_dir = "stage1_train" if subset in ["train", "val"] else subset
         dataset_dir = os.path.join(dataset_dir, subset_dir)
         if subset == "val":
@@ -464,7 +464,7 @@ if __name__ == '__main__':
             utils.download_trained_weights(weights_path)
     elif args.weights.lower() == "last":
         # Find last trained weights
-        weights_path = model.find_last()[1]
+        weights_path = model.find_last()
     elif args.weights.lower() == "imagenet":
         # Start from ImageNet trained weights
         weights_path = model.get_imagenet_weights()
