@@ -116,7 +116,7 @@ class BowlConfig(Config):
     IMAGE_MIN_SCALE = 2
 
     # Image mean (RGB)
-    MEAN_PIXEL = np.array([0 0 0])
+    MEAN_PIXEL = np.array([0, 0, 0])
 
     # Number of ROIs per image to feed to classifier/mask heads
     # The Mask RCNN paper uses 512 but often the RPN doesn't generate
