@@ -1,3 +1,7 @@
+The repo uses this MASK_RCNN implementation https://github.com/matterport/Mask_RCNN
+
+
+
 Install pycocotools and COCO pretrained weights (mask_rcnn_coco.h5). General idea is described here (https://github.com/matterport/Mask_RCNN#installation). Keep in mind, to install pycocotools properly, it's better to run make install instead of make.
 
     For a single GPU training, run:
